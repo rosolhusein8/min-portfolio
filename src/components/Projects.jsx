@@ -1,7 +1,8 @@
+import { FaGithub } from 'react-icons/fa';
+import { FiExternalLink } from 'react-icons/fi';
 import project1 from '../assets/project1.jpg';
 import project2 from '../assets/project2.jpg';
 import project3 from '../assets/project3.jpg';
-import project4 from '../assets/project4.jpg';
 
 const projects = [
   {
@@ -10,8 +11,8 @@ const projects = [
     description: "...",
     image: project1,
     tags: ["React", "Styled-Components", "Design Systems"],
-    codeLink: "#",
-    demoLink: "#"
+    codeLink: "https://github.com/rosolhusein8/portfolio",
+    demoLink: "https://rosolhusein8.github.io/portfolio/"
   },
   {
     id: 2,
@@ -19,8 +20,8 @@ const projects = [
     description: "...",
     image: project2,
     tags: ["React", "Node.js", "MongoDB"],
-    codeLink: "#",
-    demoLink: "#"
+    codeLink: "https://github.com/rosolhusein8/portfolio",
+    demoLink: "https://rosolhusein8.github.io/portfolio/"
   },
 {
     id: 3,
@@ -28,8 +29,9 @@ const projects = [
     description: "..",
     image: project3,
     tags: ["React", "Node.js", "MongoDB"],
-    codeLink: "#",
-    demoLink: "#"
+    codeLink: "https://github.com/rosolhusein8/portfolio",
+    demoLink: "https://rosolhusein8.github.io/portfolio/"
+    
   },
   /*
 {    
@@ -46,7 +48,7 @@ const projects = [
 ];
 function Projects() {
   return (
-    <section className="projects"> 
+    <section className="projects" id="projects"> 
       <h2 className="projects-title">Featured Projects</h2>
       <p className="projects-description">
         A showcase of my recent work and personal projects that demonstrate my
@@ -59,14 +61,32 @@ function Projects() {
             <img src={project.image} alt={project.name} className="project-image"/>
             <h3 className="project-name">{project.name}</h3>
             <p className="project-text">{project.description}</p>
-            <div className="project-tags">
-              {project.tags.map((tag) => (
-                <span key={tag} className="tag">{tag}</span>
-              ))}
-            </div>
-            <div className="project-links">
-              <a href={project.codeLink} className="project-link">View Code</a>
-              <a href={project.demoLink} className="project-link">Live Demo</a>
+            <div className="project-card-footer">
+              <div className="project-tags">
+                {project.tags.map((tag) => (
+                  <span key={tag} className="tag">{tag}</span>
+                ))}
+              </div>
+              <div className="project-links">
+                <a
+                  href={project.demoLink}
+                  className="project-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FiExternalLink className="project-link-icon" aria-hidden />
+                  Live Demo
+                </a>
+                <a
+                  href={project.codeLink}
+                  className="project-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaGithub className="project-link-icon" aria-hidden />
+                  Code
+                </a>
+              </div>
             </div>
           </div>
         ))}

@@ -1,3 +1,7 @@
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import { HiOutlineMail } from 'react-icons/hi';
+import { FiArrowDown } from 'react-icons/fi';
+
 function Hero() {
   return (
     <section className="hero">
@@ -12,11 +16,19 @@ function Hero() {
         functionality. Passionate about creating solutions that make a difference.
       </p>
       <div className="social-icons">
-        <a href="#" className="social-icon">GH</a>
-        <a href="#" className="social-icon">in</a>
-        <a href="#" className="social-icon">@</a>
+        <a href="https://github.com/dittanvn" className="social-icon" target="_blank" rel="noopener noreferrer">
+          <FaGithub />
+        </a>
+        <a href="https://linkedin.com/in/dittanvn" className="social-icon" target="_blank" rel="noopener noreferrer">
+          <FaLinkedinIn />
+        </a>
+        <a href="mailto:din@email.com" className="social-icon">
+          <HiOutlineMail />
+        </a>
       </div>
-      <button className="myWork-button">View My Work</button>
+      <a href="#projects" className="cta-button">
+        View My Work <FiArrowDown className="arrow-icon" />
+      </a>
     </section>
   );
 }

@@ -1,7 +1,18 @@
 
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { useState } from "react";
 
 function Contact() {
+ const [showPopup, setShowPopup] = useState(false);
+
+  const handleSubmit = (e) => { 
+    e.preventDefault();
+    // skicka till backend sen
+    setShowPopup(true);
+
+    setTimeout(() => {      setShowPopup(false);
+    }, 3000);
+  };
   return (
     <section id="contact" className="contact-section">
       <div className="contact-overlay">
@@ -26,7 +37,7 @@ function Contact() {
                 </div>
                 <div>
                   <h4>Email</h4>
-                  <span>your.email@example.com</span>
+                  <span>rosolhuseinradhi@hotmail.com</span>
                 </div>
               </div>
 
@@ -51,17 +62,26 @@ function Contact() {
               </div>
             </div>
           </div>
+            {showPopup && (
+    <div className="popup">
+      <div className="popup-content">
+        <h3>Message Sent!</h3>
+        <p>Thank you for reaching out. I'll get back to you soon.</p>
+        <button onClick={() => setShowPopup(false)}>Close</button>
+      </div>
+    </div>
+  ) }
 
           <div className="contact-form-card">
-            <form className="contact-form">
+            <form className="contact-form" onSubmit={handleSubmit}>
               <label>Name</label>
-              <input type="text" placeholder="Your name" />
+              <input type="text" placeholder="Your name" required />
 
               <label>Email</label>
-              <input type="email" placeholder="your.email@example.com" />
+              <input type="email" placeholder="your.email@example.com" required />
 
               <label>Message</label>
-              <textarea placeholder="Your message..." rows="7"></textarea>
+              <textarea placeholder="Your message..." rows="7" required></textarea>
 
               <button type="submit" className="send-btn">
                 Send Message <Send size={20} />
@@ -71,7 +91,9 @@ function Contact() {
         </div>
       </div>
     </section>
+    
   );
+
 }
 
 export default Contact;
