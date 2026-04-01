@@ -1,4 +1,4 @@
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {HashRouter, Routes, Route} from 'react-router-dom';
 import './index.css';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -25,12 +25,12 @@ function Hem() {
 }
  function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Hem />} />
         {/* <Route path="/exempel" element={<Exempel />} /> */}
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );    
 }
 
