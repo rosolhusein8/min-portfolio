@@ -3,16 +3,17 @@ import { FiExternalLink } from 'react-icons/fi';
 import project1 from '../assets/project1.jpg';
 import project2 from '../assets/project2.jpg';
 import project3 from '../assets/project3.jpg';
+import recepthub from '../assets/recepthub.jpg';
 
 const projects = [
   {
     id: 1,
-    name: "p1",
-    description: "...",
-    image: project1,
-    tags: ["React", "Styled-Components", "Design Systems"],
-    codeLink: "https://github.com/rosolhusein8/portfolio",
-    demoLink: "https://rosolhusein8.github.io/portfolio/"
+    name: "Recepthub",
+    description: "A modern, responsive recipe web app that lets users create, update, and delete recipes, browse a curated recipe page, and submit inquiries through a contact form.",
+    image: recepthub,
+    tags: ["node.js", "express", "react", "mongoDB", "Mongoose", "doten", "docker", "REST API", "JavaScript", "CSS", "HTML5", "JSON"],
+    codeLink: "https://github.com/rosolhusein8/recepthub.git",
+    demoLink: "https://rosolhusein8.github.io/recepthub/"
   },
   {
     id: 2,
