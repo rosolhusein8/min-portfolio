@@ -4,6 +4,10 @@ import { useState } from "react";
 
 function Contact() {
  const [showPopup, setShowPopup] = useState(false);
+ const [name, setName] = useState("");
+ const [email, setEmail] = useState("");
+ const [message, setMessage] = useState("");    
+ 
 
   const handleSubmit = (e) => { 
     e.preventDefault();
@@ -12,6 +16,12 @@ function Contact() {
 
     setTimeout(() => {      setShowPopup(false);
     }, 3000);
+    
+    //reset form
+    setName("");
+    setEmail("");
+    setMessage("");
+
   };
   return (
     <section id="contact" className="contact-section">
@@ -75,13 +85,31 @@ function Contact() {
           <div className="contact-form-card">
             <form className="contact-form" onSubmit={handleSubmit}>
               <label>Name</label>
-              <input type="text" placeholder="Your name" required />
+              <input 
+              type="text" 
+              placeholder="Your name" 
+              required 
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              />
 
               <label>Email</label>
-              <input type="email" placeholder="your.email@example.com" required />
+              <input 
+              type="email" 
+              placeholder="your.email@example.com" 
+              required 
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              />
 
               <label>Message</label>
-              <textarea placeholder="Your message..." rows="7" required></textarea>
+              <textarea 
+              placeholder="Your message..." 
+              rows="7" 
+              required 
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              ></textarea>
 
               <button type="submit" className="send-btn">
                 Send Message <Send size={20} />
