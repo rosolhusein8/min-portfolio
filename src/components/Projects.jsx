@@ -3,7 +3,7 @@ import { FiExternalLink } from 'react-icons/fi';
 import project1 from '../assets/project1.jpg';
 import project2 from '../assets/project2.jpg';
 import project3 from '../assets/project3.jpg';
-import recepthub from '../assets/recepthub.jpg';
+import recepthub from '../assets/recepthub.png';
 
 const projects = [
   {
