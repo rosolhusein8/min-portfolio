@@ -5,7 +5,7 @@ function Header() {
   return (
     <header className="header">
       <h1 className="logo">
-        <a href="#" className="logo-link">Portfolio</a>
+        <a href="#" className="logo-link">Rosol Radhi</a>
         </h1>
       <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)}>
         ☰

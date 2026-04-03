@@ -61,7 +61,9 @@ function Projects() {
           <div key={project.id} className="project-card">
             <img src={project.image} alt={project.name} className="project-image"/>
             <h3 className="project-name">{project.name}</h3>
-            <p className="project-text">{project.description}</p>
+            <p className="project-text" title={project.description}>
+              {project.description}
+            </p>
             <div className="project-card-footer">
               <div className="project-tags">
                 {project.tags.map((tag) => (
